@@ -1,7 +1,7 @@
 // this format is used for promise format 
 const asyncHandler=(requestHandler)=>{
      return (req,res,next)=>{
-        Promise.resolve(requestHandler(req,res,next)).reject((err)=>next(err))       //we can write reject or catch         
+        Promise.resolve(requestHandler(req,res,next)).catch((err)=>next(err))       //we can write reject or catch         
     }
 }
 
