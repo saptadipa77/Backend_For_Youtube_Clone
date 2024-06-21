@@ -14,4 +14,14 @@ app.use(express.urlencoded({extended:true,limit:"16kb"}))
 app.use(express.static("public"))  //to store pdfs,files,folders,images    "public" is name of folder
 app.use(cookieParser()) //here we also have options to write in cookieparser() but right now they are not of much use
 
+
+//routes
+import userRouter from './routes/user.routes.js'
+
+
+//routes declaration
+app.use("/api/v1/users",userRouter)    //  here v1 is version of api and declaring it is a good practice.
+//Here it is a middleware so userrouter gets activated by /users
+//it becomes https://localhost:8000/api/v1/users/register , because once control is given to userrouter it goes to that file and gets register url and performs registermethod operation declared in user.controller.js
+
 export { app }

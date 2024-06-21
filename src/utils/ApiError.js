@@ -3,7 +3,7 @@ class ApiError extends Error{
         statusCode,
         message = "Something went wrong",
         errors = [],
-        statck=""
+        stack=""
     ){ //overwritting  the constructor
         super(message)                              //line 8 to 13 we have overwritten the constructor
         this.statusCode=statusCode
@@ -12,9 +12,9 @@ class ApiError extends Error{
         this.success=false
         this.errors = errors
 
-        if(statck)
+        if(stack)
         {
-            this.statck=statck            //this senda an api response to the backend user so that he can identify which files are not correct
+            this.stack=stack            //this senda an api response to the backend user so that he can identify which files are not correct
         } else{
             Error.captureStackTrace(this,this.constructor)
         }
