@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-
-const userSchema= new Schema(
+import { Schema } from "mongoose";
+const userSchema = new Schema(
     {
         username:{
             type:String,
@@ -19,7 +19,7 @@ const userSchema= new Schema(
             lowercase:true,
             trim:true,
         },
-        fullname:{
+        fullName:{
             type:String,
             required:true,
             lowercase:true,
@@ -28,7 +28,7 @@ const userSchema= new Schema(
         },
         avatar:{
             type:String,       //cloudinary url -> its a third party website where we store videos,images etc and they give us an url
-            required:true
+           //required:true
         },
         coverImage:{
             type:String,      //cloudinary url
